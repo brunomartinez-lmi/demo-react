@@ -10,11 +10,12 @@ const WriteControl = (props) => {
         console.log("New message: " + event.target.value)
     }
 
+    
     return (
         <div className="WriteControl">
              <label>Your message</label>
              <input type="text" placeholder="type here" onChange={textChangeHandler}></input>
-             <button >Send</button> 
+             <button onClick={() => props.send(message)}>Send</button> 
         </div>
     )
 }
