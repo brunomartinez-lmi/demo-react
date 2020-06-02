@@ -5,9 +5,13 @@ import WriteControl from './components/WriteControl/WriteControl'
 
 const App = () => {
 
+  const sendHandler = (message) => {
+    alert(message)
+  }
+
   return (
     <div className="App">
-      <WriteControl />
+      <WriteControl send={sendHandler} />
       <Message author="Bruno" time="10:00:23">Hello World</Message>
       <Message author="Toto" time="10:05:23">Hi !</Message>
       <Message author="Titi" time="10:10:23">This is a very cool message</Message>
