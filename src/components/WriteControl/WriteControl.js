@@ -1,30 +1,36 @@
-import React, {useState} from 'react'
+import React, {Component} from 'react'
 import './WriteControl.css'
 
-const WriteControl = (props) => {
+class WriteControl extends Component {
 
-    const [message, setMessage] = useState("")
+    constructor(props) {
+        super(props)
 
-    const textChangeHandler = (event) => {
-        setMessage(event.target.value)
+        // initial state
+        this.state = {message: ""}
+    }
+
+    textChangeHandler(event) {
+        this.setState({message: event.target.value})
         console.log("New message: " + event.target.value)
     }
 
-    const clickHandler = () => {
-        if (message) {
-            props.send(message)
-            setMessage("")
+    clickHandler() {
+        if (this.state.message) {
+            this.props.send(this.state.message)
+            this.setState({message: ""})
         }
     }
 
-
-    return (
-        <div className="WriteControl">
-             <label>Your message</label>
-             <input type="text" onChange={textChangeHandler} value={message}></input>
-             <button onClick={clickHandler}>Send</button> 
-        </div>
-    )
+    render() {
+        return (
+            <div className="WriteControl">
+                <label>Your message</label>
+                <input type="text" onChange={(e) => this.textChangeHandler(e)} value={this.state.message}></input>
+                <button onClick={() => this.clickHandler()}>Send</button> 
+            </div>
+        )
+    }
 }
 
 export default WriteControl
