@@ -5,26 +5,33 @@ import WriteControl from './components/WriteControl/WriteControl'
 
 const App = () => {
 
-  const [message, setMessage] = useState({author: "Me", time: "10:10:01", text: ""})
+  const [messageList, setMessageList] = useState([])
 
   const sendHandler = (text) => {
     const today = new Date();
     const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-    setMessage({
+    const message = {
       author: "Me",
       time: time,
       text: text
-    })
+    }
+
+    const newList = [...messageList, message]
+    setMessageList(newList)
   }
+
+
+  const messageComps = messageList.map( (msg) => {
+    return <Message author={msg.author} time={msg.time}>{msg.text}</Message>
+  })
+
 
   return (
 
     <div className="App">
       <WriteControl send={sendHandler} />
-      <Message author="Bruno" time="10:00:23">Hello World</Message>
-      <Message author="Toto" time="10:05:23">Hi !</Message>
-      <Message author={message.author} time={message.time}>{message.text}</Message>
+      {messageComps}
     </div>
   );
 }
