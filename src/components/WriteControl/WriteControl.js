@@ -10,12 +10,19 @@ const WriteControl = (props) => {
         console.log("New message: " + event.target.value)
     }
 
-    
+    const clickHandler = () => {
+        if (message) {
+            props.send(message)
+            setMessage("")
+        }
+    }
+
+
     return (
         <div className="WriteControl">
              <label>Your message</label>
-             <input type="text" onChange={textChangeHandler}></input>
-             <button onClick={() => props.send(message)}>Send</button> 
+             <input type="text" onChange={textChangeHandler} value={message}></input>
+             <button onClick={clickHandler}>Send</button> 
         </div>
     )
 }
