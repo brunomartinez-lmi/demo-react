@@ -22,8 +22,8 @@ const App = () => {
   }
 
 
-  const messageComps = messageList.map( (msg) => {
-    return <Message author={msg.author} time={msg.time}>{msg.text}</Message>
+  const messageComps = messageList.map( (msg, index) => {
+    return <Message key={index} author={msg.author} time={msg.time}>{msg.text}</Message>
   })
 
 
