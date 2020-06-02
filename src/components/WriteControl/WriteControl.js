@@ -1,13 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './WriteControl.css'
 
 const WriteControl = (props) => {
 
+    const [message, setMessage] = useState("")
+
+    const textChangeHandler = (event) => {
+        setMessage(event.target.value)
+        console.log("New message: " + event.target.value)
+    }
+
     return (
         <div className="WriteControl">
              <label>Your message</label>
-             <input type="text"></input>
-             <button onClick={props.click}>Send</button> 
+             <input type="text" onChange={textChangeHandler}></input>
+             <button >Send</button> 
         </div>
     )
 }
