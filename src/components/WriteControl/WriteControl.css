@@ -1,0 +1,25 @@
+.WriteControl {
+    padding: 5px;
+    margin: 20px 5px 30px 5px;
+    border: 1px solid rgb(20, 4, 92);
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px rgb(218, 214, 240);
+}
+
+.WriteControl label {
+    display: block;
+    font-size: 0.8em;
+    margin: 0 0 10px 0;
+}
+
+.WriteControl input {
+    margin: 0;
+    width: 90%;
+    border: none;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+.WriteControl button {
+    margin: 2px;
+}
