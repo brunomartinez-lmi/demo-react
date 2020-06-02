@@ -1,0 +1,30 @@
+.Message {  
+    padding: 8px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #ddd;
+}
+
+.Name {
+    display: inline-block;
+    text-align: left;
+    margin: 0;
+    width: 50%;
+    font-weight: bold;
+    font-size: 0.8em;
+}
+
+.Time {
+    display: inline-block;
+    text-align: right;
+    margin: 0;
+    width: 50%;
+    color: #bbb;
+    font-size: 0.8em;
+}
+
+.Text {
+    padding-top: 5px;
+    margin: 0;
+    text-align: left;
+}
